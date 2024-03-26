@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital web</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            /* font-family: gilroy; */
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            /* background-color: rgb(224, 145, 145); */
+            /* user-select: none; */
+            /* -webkit-user-select: ; */
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            /* background-color: rgb(126, 160, 190); */
+            height: 100px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 50px;
+            /* border-bottom: 1px solid rgba(0, 0, 0, 0.473); */
+
+        }
+
+        .logo {
+            /* background-color: azure; */
+            text-transform: capitalize;
+        }
+
+        .logo h2 {
+            font-size: 35px;
+            transition: all ease .5s;
+            cursor: pointer;
+            color: black;
+            font-weight: 500;
+        }
+
+        .logo h2:hover {
+            scale: .9;
+            color: rgba(0, 0, 0, 0.61);
+        }
+
+        .logo h2 #dot {
+            color: rgb(3, 253, 3);
+            font-weight: 600;
+        }
+
+        .item1 {
+            display: flex;
+            justify-content: space-between;
+            /* background-color: aqua; */
+            align-items: center;
+            gap: 59px;
+            padding: 5px;
+            height: 100%;
+        }
+
+        .item1 a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.733);
+
+        }
+
+        .item1 a h3 {
+            text-transform: capitalize;
+            font-size: 20px;
+            /* font-weight: 500; */
+            transition: all ease .2s;
+
+        }
+
+        .item1 a>h3:hover {
+            border-bottom: 2px solid rgb(3, 253, 3);
+            scale: 1.1;
+            color: black;
+            font-weight: 500;
+        }
+
+        #con {
+            /* background-color: rgb(201, 132, 132); */
+            border: 1px solid rgb(0, 0, 0);
+            padding: 6px 20px;
+            border-radius: 40px;
+            position: relative;
+            z-index: 99;
+            overflow: hidden;
+            scale: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #con::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgb(3, 253, 3);
+            transform: translate(0%, 0%);
+            left: -100%;
+            bottom: 0;
+        }
+
+        #con:hover::after {
+            left: 0%;
+            transition: all ease .5s;
+            z-index: -99;
+        }
+
+        .item1 #con span {
+            font-size: 36px;
+            /* background-color: aquamarine; */
+        }
+
+        .main {
+            padding-top: 100px;
+            height: 100%;
+        }
+
+        .main>h1 {
+            text-align: center;
+            font-size: 70px;
+            text-transform: capitalize;
+            font-weight: 500;
+            margin-left: 200px;
+            margin-right: 250px;
+            margin-top: 170px;
+
+        }
+
+        #design {
+            margin-top: 0;
+        }
+
+        .main>h2 {
+            /* background-color: rgb(201, 132, 132); */
+            border: 1px solid rgb(0, 0, 0);
+            padding: 6px 20px;
+            border-radius: 40px;
+            position: relative;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 550px;
+            margin-right: 550px;
+            overflow: hidden;
+            scale: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .main>h2::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            background-color: rgb(3, 253, 3);
+            transform: translate(0%, 0%);
+            left: -100%;
+            bottom: 0;
+        }
+
+        .main>h2:hover::after {
+            left: 0%;
+            transition: all ease .5s;
+            z-index: -99;
+        }
+
+        #img1 {
+            position: absolute;
+            top: 110px;
+            left: 60px;
+            height: 390px;
+            width: 300px;
+            object-fit: cover;
+            object-position: top;
+
+            transition: margin ease-out .5s;
+        }
+
+        #img1:hover {
+            margin-top: -12px;
+            cursor: pointer;
+        }
+
+        #img2 {
+            position: absolute;
+            top: 120px;
+            right: 300px;
+            height: 260px;
+            width: 320px;
+            object-fit: cover;
+            object-position: top;
+            mix-blend-mode: multiply;
+            border-bottom-right-radius: 0px;
+            transition: margin ease-out .5s;
+        }
+
+        #img2:hover {
+            margin-top: -12px;
+            cursor: pointer;
+        }
+
+        #img3 {
+            position: absolute;
+            top: 360px;
+            right: 100px;
+            height: 260px;
+            width: 320px;
+            object-fit: cover;
+            object-position: top;
+            mix-blend-mode: multiply;
+            border-bottom-right-radius: 0px;
+            transition: margin ease-out .5s;
+        }
+
+        #img3:hover {
+            margin-top: -12px;
+            cursor: pointer;
+        }
+
+        .scroll {
+            font-size: 13px;
+            text-align: center;
+            text-transform: capitalize;
+            border: 1px solid rgba(0, 0, 0, 0.623);
+            margin-left: 630px;
+            margin-right: 630px;
+            margin-top: 80px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>webforge<span id="dot">.</span></h2>
+        </div>
+        <div class="item1">
+            <a href="#">
+                <h3>home</h3>
+            </a>
+            <a href="#">
+                <h3>services</h3>
+            </a>
+            <a href="#">
+                <h3>about</h3>
+            </a>
+            <a href="#">
+                <h3>careers</h3>
+            </a>
+            <a id="hov" href="#">
+                <h3 id="con">contact us<span>→</span></h3>
+            </a>
+        </div>
+    </header>
+    <div class="main">
+        <h1>digital performance </h1>
+        <h1 id="design">design</h1>
+        <h2>Find out more→ </h2>
+        <div class="scroll">scroll down↓</div>
+
+        <img id="img1" src="patrick-schneider-brcLcpPf3x4-unsplash.jpg" alt="">
+        <img id="img2" src="irina-iriser-Y9v9_YL23qs-unsplash.jpg" alt="">
+        <img id="img3" src="alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg" alt="">
+
+    </div>
+    <!-- cdn gsap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="wefourge.js"></script>
+</body>
+
+</html>
